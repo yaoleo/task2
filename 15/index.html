@@ -51,8 +51,8 @@
         var data=[];
         var uSource=document.getElementById('source').children;
         for(var i =0;i<uSource.length;i++){
-            var re1=/[\u4E00-\u9FA5]+(?=\u7a7a\u6c14)/;
-            var re2=/\d+/;
+            var re1=/[\u4E00-\u9FA5]+(?=\u7a7a\u6c14)/;//正则，选取城市名。（用正则的原因是考虑到城市名可能是两个字，也可能是三个或者四个字）
+            var re2=/\d+/;//正则，选取数值
             var city = re1.exec(uSource[i].textContent);
             var scor = parseInt(re2.exec(uSource[i].textContent));
             var cell =[city,scor];
